@@ -25,7 +25,7 @@ public class PatientServiceImpl implements PatientService {
         List<Patient> patients = patientRepository.findAllByOrderByLastNameAsc();
 
         return patients.stream()
-                .map(patient -> PatientMapper.convertToPatientWithAddress(patient))
+                .map(PatientMapper::convertToPatientWithAddress)
                 .collect(Collectors.toList());
     }
 

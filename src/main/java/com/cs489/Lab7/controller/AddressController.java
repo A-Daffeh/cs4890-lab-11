@@ -15,6 +15,11 @@ import java.util.List;
 public class AddressController {
     private final AddressService addressService;
 
+    @GetMapping
+    public String hello() {
+        return "This is the address controller";
+    }
+
     @GetMapping("/list")
     public List<AddressWithPatientResponse> getAllAddressesWithPatients() {
         return addressService.getAllAddressesWithPatientsSortedByCity();
